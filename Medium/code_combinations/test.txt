@@ -1,0 +1,4 @@
+**** | *co* | *de* | ****
+codx | decx
+co | dx
+oc | dc | de | ed

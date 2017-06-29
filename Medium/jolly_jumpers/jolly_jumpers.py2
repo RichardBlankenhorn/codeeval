@@ -1,0 +1,17 @@
+import sys
+
+with open(sys.argv[1], 'r') as test_cases:
+    for test in test_cases:
+        nums = map(int, test.rstrip('\n').split())
+        #abs_values1 = sorted(map(lambda x,y:abs(y-x), nums[1:],nums[:-1]))
+        #abs_values = sorted(abs(nums[x] - nums[x - 1]) for x in xrange(1, len(nums)))
+        abss = []
+        for i,t in enumerate(nums):
+            if i < len(nums)-1:
+                abss.append(abs(t - nums[i+1]))
+
+        if sorted(abss)[:-1] == range(1, len(nums)-1):
+            print "Jolly"
+        else:
+            print "Not Jolly"
+

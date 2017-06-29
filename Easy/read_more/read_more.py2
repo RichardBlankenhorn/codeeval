@@ -1,0 +1,18 @@
+import sys
+
+with open(sys.argv[1], 'r') as test_cases:
+    for test in test_cases:
+        li = list(test.rstrip('\n'))
+        if len(li) <= 55:
+            print ''.join(li)
+        else:
+            new_li = li[0:41]
+            if new_li[-1] == ' ':
+                new_li.pop()
+            count = 0
+            for i,v in enumerate(new_li):
+                if v == ' ':
+                    count += 1
+                    if count == new_li.count(' '):
+                        print ''.join(new_li[0:i]) + '... <Read More>'
+                        break
